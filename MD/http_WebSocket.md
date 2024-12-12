@@ -9,7 +9,7 @@ Real-vaqt aloqalari: WebSocket protokoli mijoz va server o'rtasida aniq vaqtda x
 Ishlash usuli: HTTP so'rovi orqali WebSocket ulanishi o'rnatiladi (HTTP handshaking). So'ng, WebSocket aloqasi orqali real-vaqtda xabarlar almashiladi.
 Foydalanish sohalari: Chat tizimlari, onlayn o'yinlar, real-vaqt xabarlar (stocks, sports, notification), video oqim (streaming).
 
-
+```
  Client (User 1)                              Client (User 2)
       |                                               |
       | HTTP Request --->  [WebSocket Handshake] ---> |
@@ -23,3 +23,4 @@ Foydalanish sohalari: Chat tizimlari, onlayn o'yinlar, real-vaqt xabarlar (stock
       |<--- Xabarlar Yuboriladi (Real-Time) --->|     |
       |                                               |
   WebSocket: So'rovni yopish                          |
+```
