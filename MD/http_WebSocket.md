@@ -8,7 +8,39 @@ Doimiy aloqalar (Full-duplex): WebSocket doimiy aloqalarni o'rnatadi. Server va 
 Real-vaqt aloqalari: WebSocket protokoli mijoz va server o'rtasida aniq vaqtda xabarlarni yuborishni ta'minlaydi. Bu xususiyatni chat ilovalari, o'yinlar, real-vaqt monitoring tizimlari va boshqalarda ishlatish mumkin.
 Ishlash usuli: HTTP so'rovi orqali WebSocket ulanishi o'rnatiladi (HTTP handshaking). So'ng, WebSocket aloqasi orqali real-vaqtda xabarlar almashiladi.
 Foydalanish sohalari: Chat tizimlari, onlayn o'yinlar, real-vaqt xabarlar (stocks, sports, notification), video oqim (streaming).
-
+ #### WebSocket va HTTP protokollari:
+```
+                                   +--------------------------------+
+                                   |      HTTP Protokoli            |
+                                   +--------------------------------+
+                                   |                                |
+                                   |  1. Mijozdan so'rov yuboriladi |
+                                   |  2. Server javob beradi        |
+                                   |  3. Aloqa yopiladi             |
+                                   |  4. Har bir so'rov alohida     |
+                                   |     ishlanadi (stateless)      |
+                                   |                                |
+                                   +--------------------------------+
+                                             ↓
+                                (Har bir so'rov alohida, aloqalar yopiladi)
+                                             ↓
+                                    +--------------------------------+
+                                    |     WebSocket Protokoli        |
+                                    +--------------------------------+
+                                    |                                |
+                                    |  1. HTTP so'rovi orqali        |
+                                    |     ulanish boshlanadi         |
+                                    |  2. Server WebSocketni         |
+                                    |     qo'llab-quvvatlasa,        |
+                                    |     aloqalar doimiy bo'ladi    |
+                                    |  3. Real vaqtda xabarlar       |
+                                    |     yuboriladi                 |
+                                    |  4. Full-duplex aloqalar       |
+                                    |  5. Mijoz va server bir-biriga |
+                                    |     xabar yuborishadi          |
+                                    |                                |
+                                    +--------------------------------+
+```
 ```
  Client (User 1)                              Client (User 2)
       |                                               |
